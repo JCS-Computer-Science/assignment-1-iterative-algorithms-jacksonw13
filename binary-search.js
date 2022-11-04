@@ -1,4 +1,18 @@
 function binarySearch(array, searchTerm) {
+	let start = 0
+	let end = array.length -1;
+	while (start <= end) {
+		let middle = Math.floor((start+end) / 2);
+
+		if (array[middle] == searchTerm) {
+			return middle;
+		} else if(array[middle] < searchTerm){
+			start = middle + 1;			
+		} else {
+			end = middle - 1;
+		}
+	}
+}
 	/*
 	 ** Check the middle element, if it's higher than the searchTerm
 	 ** then check the element in between the start and the middle, otherwise
@@ -7,8 +21,4 @@ function binarySearch(array, searchTerm) {
 	 ** repeat the above process for the subset of the array
 	 ** keep repeating with smaller and smaller subsets until you find the searchTerm
 	 */
-
-	return null;
-}
-
 module.exports = binarySearch;
